@@ -16,5 +16,6 @@ namespace Business.Abstract
         IDataResult<Product> GetById(int productId);    // Ürün döndürüyor
         IResult Add(Product product);   // Void Hiçbir şey döndürmüyor // Void de data olmadığı için IResult yaptık
                                         // Fakat diğerlerinde data, başarı ve mesaj olduğu için IDataResult tanımladık
+        IResult Update(Product product);
     }
 }
