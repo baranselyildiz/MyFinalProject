@@ -29,8 +29,8 @@ namespace Business.Concrete
             _categoryService = categoryService;
         }
 
-        //22.15 DERSTEYİZ
-
+        // Claim (Yetki) --> admin, moderator, product.add gibi..
+        //[SecuredOperation("product.add,admin")]
         [ValidationAspect(typeof(ProductValidator))]
         public IResult Add(Product product)
         {
@@ -52,7 +52,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Product>> GetAll()
         {
-            if (DateTime.Now.Hour == 1)
+            if (DateTime.Now.Hour == 2)
             {
                 return new ErrorDataResult<List<Product>>(Messages.MaintenanceTime);
             }
